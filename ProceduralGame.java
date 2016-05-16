@@ -10,11 +10,12 @@ public class ProceduralGame {
     public static void main(String[] args) {
 
         char[][] board=new char[3][3];
+
         char currPlayer='X';
         Arrays.fill(board, ' ');
 
         while(!finished(board)){
-            System.out.println("Player "+currPlayer+" moves...");
+            System.out.println("CDPlayer "+currPlayer+" moves...");
             System.out.println("Enter your move: ");
             String move="12";
             makeMove(move, board);

@@ -1,38 +1,35 @@
 package ua.od.pindus;
 
+/**
+ * Created by User on 12.05.2016.
+ */
+public abstract class Player {
 
-public class Player {
-    boolean radio;
-    boolean cd;
-    double[] fm = new double[3];
-    String disk;
+    private String lastName;
+    private String firstName;
+    private String middleName;
+    private int age;
+    private char type;
 
-    Player() {
-        radio = true;
-        cd = false;
+    public Player(String lastname, String firstname, String middlename, int age, char type) {
+        this.lastName = lastname;
+        this.firstName = firstname;
+        this.middleName = middlename;
+        this.age = age;
+        this.type = type;
     }
 
-    public void TurnTheRadio() {
-        radio = true;
-        cd = false;
+    public char getType() {
+        return type;
     }
 
-    public void TurnTheCd() {
-        radio = false;
-        cd = false;
+    public void setType(char type) {
+        this.type = type;
     }
 
-    public void SetRadioAutomatically() {
-        for (double i = 89.0; i < 105.5; i += 0.10) {
-            int currIndex = 0;
-            while (currIndex != 3) {
-                if (!(i == 89.7 || i == 102.3 || i == 105.3)) {
-                    break;
-                } else {
-                    fm[currIndex] = i;
-                    currIndex++;
-                }
-            }
-        }
+    public String toString() {
+        return firstName + " " + lastName;
     }
+
+    public abstract String makeMove();
 }
